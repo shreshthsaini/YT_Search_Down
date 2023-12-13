@@ -26,7 +26,7 @@ Or alternatively, we can use opecv to read the video:
 -- Author: Shreshth Saini 
 
 """
-
+import os
 import imageio_ffmpeg as ffmpeg
 import numpy as np 
 import subprocess
@@ -260,6 +260,45 @@ def read_webm_10bit(video_path):
         print("Frames Processed : ", count)
 
     return frames
+
+#-------------------------------------------------**********-------------------------------------------------#
+def read_yuv_video(filename, width, height):
+    """
+    Read a 10-bit YUV HDR video file.
+    
+    Parameters:
+    - filename: path to the YUV file.
+    - width: width of the YUV frames.
+    - height: height of the YUV frames.
+    
+    Returns:
+    - y, u, v: Y, U, and V components as 3D numpy arrays.
+    """
+    
+    # Calculate frame size for 10-bit
+    frame_size = width * height * 2 + (width // 2 * height // 2) * 2 * 2
+    
+    # Calculate the number of frames based on file size
+    num_frames = os.path.getsize(filename) // frame_size
+    
+    frames = []
+    with open(filename, 'rb') as f:
+        for i in range(num_frames):
+            # Read Y component
+            y_video = np.frombuffer(f.read(width * height * 2), dtype=np.uint16).reshape((height, width))
+            
+            # Read U component
+            u_video = np.frombuffer(f.read(width // 2 * height // 2 * 2), dtype=np.uint16).reshape((height // 2, width // 2))
+            
+            # Read V component
+            v_video = np.frombuffer(f.read(width // 2 * height // 2 * 2), dtype=np.uint16).reshape((height // 2, width // 2))
+
+            # Stack the Y, U, and V components and append frame in frames list
+            frames.append(np.stack((y_video, u_video, v_video), axis=-1))
+            
+        
+    return frames
+
 
 #-------------------------------------------------**********-------------------------------------------------#
 def main(video_path, range_type='tv', format='any'):
