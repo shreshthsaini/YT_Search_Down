@@ -1,0 +1,3 @@
+[submodule "REPO/HIDRO-VQA-DATA"]
+	path = REPO/HIDRO-VQA-DATA
+	url = https://github.com/shreshthsaini/HIDRO-VQA-DATA.git
