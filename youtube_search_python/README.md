@@ -4,9 +4,6 @@
 
 ## There have been no active project maintainers since 23rd June 2022.
 
-[![PyPI - Version](https://img.shields.io/pypi/v/youtube-search-python?style=for-the-badge)](https://pypi.org/project/youtube-search-python)
-
-
 ## Sync
 
 #### Search for only videos
