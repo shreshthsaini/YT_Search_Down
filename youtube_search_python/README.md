@@ -1,17 +1,8 @@
-# [youtube-search-python](https://github.com/alexmercerind/youtube-search-python)
+# MODIFIED [youtube-search-python]
 
 ##### Search for YouTube videos, channels & playlists. Get video & playlist information using link. Get search suggestions. WITHOUT YouTube Data API v3.
 
-## There are no active project maintainers since 23rd June 2022. Details: [Here](https://github.com/alexmercerind/youtube-search-python/issues/189)
-
-[![PyPI - Version](https://img.shields.io/pypi/v/youtube-search-python?style=for-the-badge)](https://pypi.org/project/youtube-search-python)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/youtube-search-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/youtube-search-python)
-
-## Installing
-
-```bash
-pip3 install youtube-search-python
-```
+## There have been no active project maintainers since 23rd June 2022.
 
 ## Sync
 
@@ -140,8 +131,6 @@ videosSearch = VideosSearch('NoCopyrightSounds', limit = 2)
 videosResult = await videosSearch.next()
 print(videosResult)
 ```
-
-Read more about usage & examples of newer asynchronous version of this library [HERE](https://github.com/alexmercerind/youtube-search-python/tree/main/youtubesearchpython/__future__).
 
 
 ## More Examples
@@ -611,9 +600,6 @@ print(allSearch.result())
 ```
 
 </details>
-
-You may see the [example](https://github.com/alexmercerind/youtube-search-python/blob/main/syncExample.py) for more information.
-
 
 ## Advanced
 
