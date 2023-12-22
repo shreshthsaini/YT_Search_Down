@@ -144,7 +144,7 @@ Given the large size of keyword csv files, we search in batches withing search s
 
 4. The downloaded videos will be saved in the `./Downloaded_videos` directory.
 
-5. A `read_hdr_10bit.py` files is also provided in case the downloaded videos are in HDR-10.
+5. `read_hdr_10bit.py` & `check_hdr.py` files are also provided in case the downloaded videos are in HDR-10.
 
 ## Contributing
 
